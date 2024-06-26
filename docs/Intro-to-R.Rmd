@@ -1,0 +1,179 @@
+---
+title: ""
+author: ""
+date: ""
+output:
+  html_document:
+    theme: flatly
+    highlight: haddock
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+***
+<center>
+![](Y:/RHUL/PS2010_R/logo.png){width=30%}
+</center>
+
+## An Introduction to RStudio
+***
+### **Objectives**
+* To familiarise yourself with RStudio and understand what each panel does.
+* To set-up a project and create an R Script.
+
+*** 
+### **Introduction --- R you Ready?**
+Welcome to the world of R. Firstly, you'll need access to R. You can download R **and** R studio [here](https://posit.co/download/rstudio-desktop/). There are two steps to installation. First you need to install R, and second you need to install RStudio.  
+
+R and RStudio are not the same thing:
+
+* **R** is a coding language primarily used for statistical computing and data visualisation, although it can do many different things! Think of R as a written language. Like any language we need somewhere to write it down...
+* **RStudio** is a place you can write down and run your code! It is an R toolbox or workspace that provides a user-friendly interface for writing and running your R code.
+
+<details>
+  <summary> **Click to learn more** </summary>
+  <span style="color:darkblue;">Think of **R** code as like a recipe or a set of instructions to tell someone how to make a delicious       meal.
+  Whereas **RStudio** is your kitchen filled with all your tools and equipment that you can interact with. It allows you to         organise your ingredients (data), mix them together (writing and running code), and see the delicious and tasty results (view     outputs and plots).
+</details>
+
+#### **Why are you making us learn R?**
+Over the last decade, R has become the "go to" tool to help carry out data analysis in psychological research. R is free and open source. Coding is a highly desirable and transferable skill. However, you don't need to become an advanced genius coder. Gaining an understanding of how coding works to help you organise, analyse, and present data will be enough for a psychology undergraduate degree.
+There are lots of reasons to use R in psychological research and you can read about more [here](http://www.andywills.info/rminr/why-r-student.html)
+
+#### **RStudio**
+When you open RStudio you should see a window that looks like this:
+
+![](Y:/RHUL/PS2010_R/rstudio.png){width=80%}
+
+You will see three sections:
+
+1. The **console** is the largest panel on the left. This is where R will produce any written output for you to read and make sense of -- almost like a printer.
+
+2. The **environment** is the top right panel is where R keeps a list of any data you are working with- almost like R's memory.
+
+3. The **files** panel on the bottom right does a few things, as it has a few different tabs. I'll talk through the most commonly used tabs:
+    + **Files** allows you to navigate to files on your computer, **plots** is an important one as it is where R produces any data visuals (e.g., graphs or formatted tables), and the **packages** tab helps you manage your packages.
+
+<details>
+  <summary> **Click to learn more** </summary>
+  <span style="color:darkblue;">What's a package? Think of a package as an "add on" or an "app" you can add into R. It is a toolbox with various functions to help you run different analyses. You need to install packages as and when you need them. More on this later...
+</details>
+
+***
+
+\newpage
+
+### **Creating a Project**
+You can use "projects" in R which can help keep your work tidy and organised. It also means you can save your work and come back to it any time in the future. If you are a PS2010 student at Royal Holloway, I'd recommend you create **one** project for all of your PS2010 work in R. Make sure you save it somewhere sensible, for example, if you're using a campus PC, save it onto your Y:Drive.
+
+How to create a new project:
+
+1. In the top right corner, find and click on the blue button which says "Project: (None)".
+
+     ![](Y:/RHUL/PS2010_R/project1.png){width=55%}  
+
+2. Select "New Directory".
+
+      ![](Y:/RHUL/PS2010_R/project2.png){width=55%}  
+
+3. Select "New Project".
+
+     ![](Y:/RHUL/PS2010_R/project3.png){width=55%}  
+
+4. Give your project a suitable name. PS2010 students, I recommend you call it "ps2010".
+
+      ![](Y:/RHUL/PS2010_R/project4.png){width=55%}  
+
+5. Now you are ready to create a new script. Look for this button (![](Y:/RHUL/PS2010_R/project5a.png){width=4%}) in the top left corner of your screen, click on it and select "R Script".
+
+     ![](Y:/RHUL/PS2010_R/project5.png)
+     
+6. If you have followed those steps correctly, a new panel should open up in RStudio.
+
+     ![](Y:/RHUL/PS2010_R/project6.png) 
+
+**This new panel on the top left is the "script" panel.** This is where you can enter your code -- think of the script panel as an input panel. Helpfully, you can save your script at anytime which means you can come back to your code at a later date. 
+
+***
+
+\newpage
+
+### **Time to Start Coding in R**
+```{r xaringanExtra-clipboard, echo=FALSE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\" style=\"font-size: 24px;\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D; font-size: 24px;\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+Let's begin with some very simple coding in the script panel. In your new script panel add the following:
+```{r, tidy = FALSE, comment = "##"}
+# My first R script
+```
+
+A useful thing to know is anything you write after # (the hashtag symbol) is called a “comment”. This is a way to keep notes that R wont read. R will ignore anything that comes after a hashtag. Think of these as human notes, ignored by the computer!
+
+Annotating your code with comments is a really good habit to get into because it means you have the comment to look at in the future, almost like revision notes to remind you what each line of code does. It means when you come back to re-run or recycle code in the future, you can figure out what it does quickly.
+
+Now let's get R to work. In the script panel enter the following:
+```{r, eval = FALSE}
+date()
+```
+
+**STOP!** You might remember from above I mentioned that using comments to annotate your code is best practice. Well straight away I have ignored my own advice. Let's try that again:
+```{r, eval = FALSE}
+date() #Ask R what today's date is
+```
+
+I suppose it is easy to work out what date() does without the comment. But as your code gets more complicated, using comments will become so important!
+
+**How to run the code:**
+
+There are a few ways to run code in R. The easiest is probably to make sure your cursor is at the end of the line you've just written and then press **CTRL** + **ENTER** if you're on a Windows PC or **COMMAND** + **ENTER** if you're on a Mac. Give this a go now and R should tell you the date (check the console -- bottom left panel).
+
+Why not have a go at asking R something else. R is essentially a very sophisticated and fancy calculator, but let's try some basic and more complex maths sums to get you used to running lines of code. Try out the sums below and run each one or add any sum you like
+
+```{r, eval = FALSE}
+2+2 #Ask R a maths question
+```
+```{r, eval = FALSE}
+25*80 #Ask R a slightly more tricky question
+```
+```{r, eval = FALSE}
+1234/92 #Ask R a really tricky question
+```
+
+`+` will add.
+
+`-` will subtract.
+
+`*` will multiply.
+
+`/` will divide.
+
+### **Everyone Loves a Compliment**
+Who doesn't love a compliment. Let's create a random compliment generator in R. Enter and run the code below to recieve a compliment:
+```{r, eval = FALSE, tidy = TRUE}
+compliments = c("You're awesome!", "You're a coding superstar!", "Keep on slaying this workshop!",
+                "You’re the best")
+random_compliment = sample(compliments, 1)
+print(random_compliment)
+```
+
+<details>
+  <summary> **Click to learn more** </summary>
+  <span style="color:darkblue;">If you want to know what each part of the compliment generator code does, I'll explain below:
+  
+* `compliments = c()` created a vector, in this case a small data set with four compliments.
+
+* `random_compliment = sample(compliments, 1)` asked R to create an object in R which sampled one of the compliments from the vector.
+
+* `print(random_compliment)` printed the sampled compliment.
+</details>
+
+***
+
